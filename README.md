@@ -3,6 +3,9 @@ Classe JS de détection d'objets dans une video à l'aide d'algorithmes de trait
 
 index.html est une interface préconfigurée prête à l'emploi et ne nécéssitant aucune configuration.
 
+![ScreenShot](https://raw.githubusercontent.com/cedricmillet/Detection-d-Objets/master/screen.png)
+
+
 ## Avertissement
 Le code n'est pas propre ni optimisé car écrit rapidement.
 
