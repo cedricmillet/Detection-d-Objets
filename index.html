@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Traitement d'images</title>
+    <style type="text/css">
+    	body {
+    		margin: 0;
+    		padding: 0;
+    	}
+    	div#viewcontainer {
+    		float: left;
+    		background-color: #FAFAFA;
+    		width:70%;
+    		height: 100vh;
+    	}
+
+    	
+    	div#controlscontainer {
+    		float:right;
+    		width: 30%;
+    		background-color: #DFDFDF;
+    		height: 100vh;
+
+    	}
+
+    	div.container {
+    		padding: 30px;
+    	}
+
+    	video, canvas, #camera_donnees { 
+    		width: 50%;
+    		margin: 0;
+    		padding:0;
+    		float: left; 
+    		background-color: blue;
+    		overflow-y: scroll;
+    		max-height: 60vh;
+    	}
+    	input[type="range"] { 
+    		width: 100%;
+    	 	box-shadow: 1px 2px 1px #000000, 0px 0px 1px #0d0d0d;
+			height: 36px;
+			cursor: pointer;
+		}
+
+		div#viewcontainer #camera_donnees {
+    		width: 50%;
+    		background-color: transparent;
+
+    	}
+
+    	div#logvideo {
+    		height: 100px; 
+    		overflow-y: scroll;
+    		background-color:#E2C6C6;
+    		position: fixed;
+    		bottom: 0;
+    		right:0;
+    		width:30%;
+    		height: 40vh; 
+    		border-top: 3px solid black;
+    	}
+    </style>
+  </head>
+
+  <body>
+
+    
+
+
+    	<div id="viewcontainer">
+    		<video width="400" controls autoplay id="video"><source src="video.mp4#t=02" type="video/mp4"></video>
+    		<!-- canvas_de_reference -->
+    		<canvas id='canvasvideoreference' width=400 height=300 style="display:block"></canvas>
+    		<!-- canvas_capture -->
+			<canvas id='canvasvideonouv' width=400 height=300></canvas>
+			<!-- données -->
+			<div id="camera_donnees">
+				<div class="container">
+					
+				</div>
+			</div>
+			
+    	</div>
+
+    	<div id="controlscontainer">
+    		<center><h3>Paramètres</h3></center>
+    		<div class="container">
+				
+				
+				<div style="clear:both"></div>
+				<section style="float:left">
+					<input type="checkbox" style="transform: scale(1.5);" id="camera_enablerefreshreference"> Mettre à jour l'image de référence
+				</section>
+				<br><br>
+				<div style="clear:both"></div>
+				<section style="float:left">
+					<input type="checkbox" style="transform: scale(1.5);" id="camera_enabledetection" checked> Activer la detection d'object
+				</section>
+				<div style="clear:both"></div>
+				<br><br>	
+				<hr>
+				<section style="float:left;width:100%">
+					<h4>Seuillage</h4>
+					<section style="">
+						<input type="checkbox" style="transform: scale(1.5);" id="camera_enableseuil" checked> Activer le seuillage
+					</section>
+					<br>
+					<h4>Modifier la valeur du seuilage [0;255]</h4>
+					<input type="range" id="camera_valeurseuil" name="cowbell" min="0" max="100" value="40" step="1" 
+					onchange="document.getElementById('camera_valeurseuilstr').innerHTML='Valeur seuil : '+this.value;">
+					<br>
+					<center><span id="camera_valeurseuilstr">Valeur seuil : 40</span></center>
+				</section>
+			</div>
+	
+			<div id="logvideo"></div>
+    	</div>
+
+
+
+
+	<script src="src/Image.js">	</script>
+	<script src="src/TraitementCamera.js">	</script>
+	
+	<script type="text/javascript">
+		//Nouvelle instance
+		var camera = new TraitementCamera(
+			document.getElementById('video'), 
+			document.getElementById('canvasvideonouv'),
+			document.getElementById('canvasvideoreference'),
+			220
+		);
+	</script>
+	<!-- FIN CODE PERSO -->
+
+  </body>
+</html>
