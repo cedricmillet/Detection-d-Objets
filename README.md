@@ -1,7 +1,7 @@
 # Detection-d-Objets
 Classe JS de détection d'objets dans une video à l'aide d'algorithmes de traitements (soustration et seuillage) image par image.
 
-index.html est une interface préconfigurée prête à l'emploi et ne nécéssitant aucune configuration.
+Il s'agit d'une interface prête à l'emploi et ne nécéssitant aucune configuration.
 
 ![ScreenShot](https://raw.githubusercontent.com/cedricmillet/Detection-d-Objets/master/screen.png)
 
