@@ -20,3 +20,4 @@ Le code n'est pas propre ni optimisé car écrit rapidement.
 
 ## Installation
 * Ouvrez _index.html_ dans **Mozilla Firefox**, les autres navigateurs ne supportent pas certaines opérations sur les **canvas**
+* ready !
