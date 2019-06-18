@@ -5,6 +5,7 @@ Il s'agit d'une interface prête à l'emploi et ne nécéssitant aucune configur
 
 ![ScreenShot](https://raw.githubusercontent.com/cedricmillet/Detection-d-Objets/master/screen.png)
 
+![ScreenShot](https://raw.githubusercontent.com/cedricmillet/Detection-d-Objets/master/apercu.gif)
 
 ## Avertissement
 Le code n'est pas propre ni optimisé car écrit rapidement.
